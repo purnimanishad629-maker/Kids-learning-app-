@@ -443,3 +443,31 @@ body {
         grid-template-columns: 1fr;
     }
   }
+/* Teacher Photo Styling */
+.teacher-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f5576c;
+    transition: transform 0.3s;
+}
+
+.teacher-photo:hover {
+    transform: scale(1.05);
+}
+
+.welcome-banner {
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
