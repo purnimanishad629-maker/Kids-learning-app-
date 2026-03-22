@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Kids Learning App - Play & Learn English</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main App Container -->
+    <div class="app-container">
+        
+        <!-- Header Section -->
+        <div class="header">
+            <div class="header-content">
+                <h1>🌟 Kids Learning Fun 🌟</h1>
+                <p>Play Games & Learn English Speaking!</p>
+            </div>
+            <div class="score-board">
+                <span>🏆 Score: <span id="totalScore">0</span></span>
+            </div>
+        </div>
+
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="games">🎮 Games</button>
+            <button class="tab-btn" data-tab="speaking">🗣️ Speaking</button>
+            <button class="tab-btn" data-tab="stories">📚 Stories</button>
+            <button class="tab-btn" data-tab="writing">✍️ Writing</button>
+        </div>
+
+        <!-- Games Section - Learn English Through Games -->
+        <div id="games" class="content-section active">
+            <h2>🎮 Play & Learn English</h2>
+            <div class="games-grid">
+                <!-- Game 1: Alphabet Recognition -->
+                <div class="game-card" data-game="alphabet">
+                    <div class="game-icon">🔤</div>
+                    <h3>Alphabet Hunter</h3>
+                    <p>Find the correct letter! Learn A to Z</p>
+                    <div class="game-badge">Easy</div>
+                </div>
+
+                <!-- Game 2: Word Building -->
+                <div class="game-card" data-game="word">
+                    <div class="game-icon">📝</div>
+                    <h3>Word Builder</h3>
+                    <p>Make words from letters! C-A-T = Cat</p>
+                    <div class="game-badge">Medium</div>
+                </div>
+
+                <!-- Game 3: Vocabulary Match -->
+                <div class="game-card" data-game="vocabulary">
+                    <div class="game-icon">🎯</div>
+                    <h3>Match & Learn</h3>
+                    <p>Match words with pictures</p>
+                    <div class="game-badge">Easy</div>
+                </div>
+
+                <!-- Game 4: Sentence Making -->
+                <div class="game-card" data-game="sentence">
+                    <div class="game-icon">💬</div>
+                    <h3>Sentence Maker</h3>
+                    <p>Arrange words to make sentences</p>
+                    <div class="game-badge">Hard</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Speaking Section - Learn English Speaking -->
+        <div id="speaking" class="content-section">
+            <h2>🗣️ Learn English Speaking</h2>
+            <div class="speaking-container">
+                <div class="speaking-card">
+                    <h3>🔊 Listen & Repeat</h3>
+                    <p>Click on the word to hear pronunciation</p>
+                    <div class="words-list" id="wordsList">
+                        <!-- Words will be added by JavaScript -->
+                    </div>
+                    <button class="record-btn" id="recordBtn">🎤 Click & Speak</button>
+                    <div id="speechResult" class="speech-result"></div>
+                </div>
+                
+                <div class="conversation-card">
+                    <h3>💬 Daily Conversations</h3>
+                    <div class="conversation-list" id="conversationList">
+                        <!-- Conversations will be added -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stories Section - Learn English Reading -->
+        <div id="stories" class="content-section">
+            <h2>📚 Read & Learn Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card" data-story="cat">
+                    <h3>🐱 The Clever Cat</h3>
+                    <p>Learn new words: clever, mouse, chase</p>
+                </div>
+                <div class="story-card" data-story="sun">
+                    <h3>☀️ The Happy Sun</h3>
+                    <p>Learn new words: shine, warm, bright</p>
+                </div>
+                <div class="story-card" data-story="friends">
+                    <h3>👫 Best Friends</h3>
+                    <p>Learn new words: share, play, together</p>
+                </div>
+                <div class="story-card" data-story="rainbow">
+                    <h3>🌈 The Rainbow Colors</h3>
+                    <p>Learn colors: red, blue, yellow, green</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Writing Section - Learn English Writing -->
+        <div id="writing" class="content-section">
+            <h2>✍️ Learn to Write</h2>
+            <div class="writing-container">
+                <div class="writing-card">
+                    <h3>📝 Trace & Write</h3>
+                    <div id="tracingArea">
+                        <p>Letter: <span id="currentLetter">A</span></p>
+                        <canvas id="drawingCanvas" width="300" height="200"></canvas>
+                        <div class="writing-buttons">
+                            <button id="clearCanvas">Clear</button>
+                            <button id="nextLetter">Next Letter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="practice-card">
+                    <h3>📖 Word Practice</h3>
+                    <div id="wordPractice">
+                        <p>Write these words:</p>
+                        <ul id="wordList">
+                            <li>🐕 Dog</li>
+                            <li>🐈 Cat</li>
+                            <li>☀️ Sun</li>
+                            <li>⭐ Star</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Modal Popup -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="gameContent"></div>
+        </div>
+    </div>
+
+    <!-- Story Modal -->
+    <div id="storyModal" class="modal">
+        <div class="modal-content story-modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="storyContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
